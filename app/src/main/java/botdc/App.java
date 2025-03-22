@@ -28,7 +28,9 @@ import io.github.cdimascio.dotenv.Dotenv;
 import java.nio.ByteBuffer;
 
 public class App {
-    private static final Dotenv dotenv = Dotenv.configure().load();
+    private static final Dotenv dotenv = Dotenv.configure()
+        .directory("C:/Users/Noam/Downloads/BotDC/app") // Especifica la ruta del archivo .env
+        .load();
     private static final String TOKEN = dotenv.get("DISCORD_TOKEN");
     private static Snowflake USER_ID = Snowflake.of(dotenv.get("USER_ID")); // USER_ID actualizado
     private static final String SOUND_FILE_PATH = "SOUND_FILE_PATH"; // Ruta al archivo de sonido
