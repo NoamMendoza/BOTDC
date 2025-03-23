@@ -33,7 +33,7 @@ public class App {
         .load();
     private static final String TOKEN = dotenv.get("DISCORD_TOKEN");
     private static Snowflake USER_ID = Snowflake.of(dotenv.get("USER_ID")); // USER_ID actualizado
-    private static final String SOUND_FILE_PATH = "SOUND_FILE_PATH"; // Ruta al archivo de sonido
+    private static final String SOUND_FILE_PATH = dotenv.get("SOUND_FILE_PATH"); // Ruta al archivo de sonido
 
     private static AudioPlayerManager playerManager;
     private static AudioPlayer player;
