@@ -72,6 +72,7 @@ public class App {
                 }
             });
 
+            //Conexion con el gateway de discord y metodo principal para ejecutar eventos
             client.withGateway(gateway -> {
                 System.out.println("Bot conectado al Gateway de Discord");
 
