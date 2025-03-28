@@ -6,7 +6,13 @@ import java.io.IOException;
 import io.github.cdimascio.dotenv.Dotenv;
 
 public class Validaciones {
-    private static final Dotenv dotenv = Dotenv.load();
+    private static final Dotenv dotenv = Dotenv.configure()
+        .directory(".")
+        .directory("./app")
+        .directory("/app")
+        .ignoreIfMissing()
+        .load();
+        
     public static void validateEnvironmentVariables() {
         if (dotenv.get("DISCORD_TOKEN") == null || dotenv.get("DISCORD_TOKEN").isEmpty()) {
             throw new IllegalStateException("DISCORD_TOKEN no está configurado en el archivo .env");

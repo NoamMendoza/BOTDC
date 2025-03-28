@@ -5,4 +5,4 @@
 build
 
 *.env
-.vscode
+.vscode/

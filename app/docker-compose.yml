@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  botdc:
+    build: .
+    volumes:
+      - .:/app/sounds:/app/app/sounds
+    environment:
+      - JAVA_OPTS=-Xmx512m
+    restart: always
